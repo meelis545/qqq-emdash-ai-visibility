@@ -1,0 +1,4 @@
+- The plugin asks for one capability: `network:request`, limited to `qqq.ee`.
+- It sends only the domain name, to `https://qqq.ee/mcp`. It reads no content, users, comments or media and stores only the last check result in its own key-value store.
+- The MCP tool routes are private and need the `content:read` permission. They are read-only.
+- Report security issues to ai@qqq.ee. QQQ's privacy policy: https://qqq.ee/en/privacy-policy/

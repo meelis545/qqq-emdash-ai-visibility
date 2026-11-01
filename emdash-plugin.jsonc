@@ -1,0 +1,46 @@
+{
+	"$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+
+	"slug": "ai-visibility",
+	// Placeholder until the qqq.ee Atmosphere account exists: replace with its DID (see PUBLISHING.md).
+	"publisher": "did:plc:qqqeeplaceholderxxxxxxxx",
+
+	"name": "QQQ AI Visibility Checker",
+	"license": "MIT",
+	"author": { "name": "QQQ", "url": "https://qqq.ee/en/" },
+	"security": { "email": "ai@qqq.ee" },
+	"description": "See if ChatGPT, Gemini, Claude and Perplexity crawlers can read your site, and fix what blocks AI search. Free check by QQQ.",
+	"keywords": ["ai visibility", "geo", "ai search", "seo", "llms.txt"],
+	"repo": "https://github.com/meelis545/qqq-emdash-ai-visibility",
+
+	// Trust contract. The plugin only sends the site's domain name to qqq.ee/mcp; it reads no content, users,
+	// comments or media. Changing these between releases requires a version bump.
+	"capabilities": ["network:request"],
+	"allowedHosts": ["qqq.ee"],
+	"storage": {},
+
+	"admin": {
+		"pages": [{ "path": "/overview", "label": "AI visibility", "icon": "eye" }],
+		"widgets": [{ "id": "ai-visibility", "title": "AI visibility", "size": "half" }],
+		"settingsSchema": {
+			"domain": {
+				"type": "string",
+				"label": "Public domain",
+				"description": "Domain to check, for example example.com. Leave empty to use the site URL.",
+			},
+		},
+	},
+
+	"sections": {
+		"installation": { "file": "docs/installation.md" },
+		"faq": { "file": "docs/faq.md" },
+		"security": { "file": "docs/security.md" },
+		"changelog": { "file": "CHANGELOG.md" },
+	},
+
+	"release": {
+		"artifacts": {
+			"icon": { "file": "assets/icon.png" },
+		},
+	},
+}
